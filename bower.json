@@ -1,0 +1,26 @@
+{
+  "name": "oilpaint-filter",
+  "version": "0.0.1",
+  "homepage": "https://github.com/loktar00/oilpaint-filter",
+  "description": "Oil paint filter web component that extends the image element",
+  "keywords": [
+    "web-components",
+    "img",
+    "image",
+    "filter"
+  ],
+  "authors": [
+    "Jason Brown"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "platform": "polymer/platform#~0.3.5"
+  }
+}
