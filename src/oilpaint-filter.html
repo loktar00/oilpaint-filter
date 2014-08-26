@@ -1,0 +1,39 @@
+<template>
+    <style>
+        :host{
+            border:2px solid red;
+        }
+    </style>
+</template>
+<script>
+    (function(window, document, undefined) {
+        // Refers to the "importee"
+        var thisDoc = document._currentScript.ownerDocument,
+            template = thisDoc.querySelector('template').content,
+            oilpaintFilter = Object.create(HTMLElement.prototype);
+
+        // Fires when an instance of the element is created
+        oilpaintFilter.createdCallback = function() {
+            var shadowRoot = this.createShadowRoot(),
+                clone = document.importNode(template, true),
+                self = this;
+
+            shadowRoot.appendChild(clone);
+        };
+
+        // Fires when an attribute was added, removed, or updated
+        oilpaintFilter.attributeChangedCallback = function(attr, oldVal, newVal) {
+
+        };
+
+        oilpaintFilter.setAttr = function(val) {};
+
+        // Registers <input-clear> in the main document
+        window.MyElement = document.registerElement('oilpaint-filter', {
+            prototype: Object.create(HTMLImageElement.prototype),
+            extends: 'img'
+        });
+
+    })(window, document);
+</script>
+</script>
